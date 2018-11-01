@@ -13,20 +13,34 @@
 </head>
 <body>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Orbitron');
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Orbitron');
 
-        body {
-            background: rgb(41, 57, 97);
-        }
-        hr {
-          background: white;
-          margin: -30px;
-          margin-top: 80px;
-          width: 10%;
-        }
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      } 
+    body {
+      background: rgb(41, 57, 97);
+      }
+    hr {
+      background: white;
+      margin: 80px 0 0 -35px;
+      width: 10%;
+      }
+      button {
+        margin-top: 80px;
+        border: none;
+        background-color: transparent;
+      }
+      .jumbotron {
+        background-image: url(https://www.picclickimg.com/d/w1600/pict/272591177988_/SPACE-GUARDIANS-OF-THE-GALAXY-Background-Backdrop-for.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
         
-        </style>
+  </style>
         <!--top nav bar-->
 
     <ul class="nav justify-content-center" style="background: rgb(32, 32, 46); padding-bottom: 70px;">
@@ -40,34 +54,36 @@
           <a class="nav-link" href="#">Link</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link" href="#">Link</a>
         </li>
       </ul>
 
-      <div class="jumbotron" style="text-align: center; font-family: 'Orbitron', sans-serif; padding-bottom: 15em;">
+      <div class="jumbotron" style="text-align: center; font-family: 'Orbitron', sans-serif; padding-bottom: 10em;">
 
-        <h1 class="display-4">To Assimilate or Terminate</h1>
+        <h1 class="display-4" style="color: white;">To Assimilate or Terminate</h1>
         <br>
+        <img src="assets/images/logo.png" alt="brand logo" style="width: 300px; height: 200px; float: left;">
+        <button>
         <a class="btn btn-primary btn-lg" href="#" role="button">Popular</a>
         <a class="btn btn-primary btn-lg" href="#" role="button">Price</a>
         <a class="btn btn-primary btn-lg" href="#" role="button">Age Restriction</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Extra Button</a>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Genre</a>
+        </button>
+        <img src="assets/images/skynet.png" alt="skynet logo" style="width: 300px; height: 200px; float: right;">
       </div>
 
-
-  <!--horizontal nav bar-->
   
-  <nav class="nav flex-column" style="margin-left: 10em;">
+  <nav class="nav flex-column" style="margin-left: 10.5em;">
+    <!--horizontal nav bar-->
     <hr>
     <br>
     <a class="nav-link active" href="#">Active</a>
       <a class="nav-link" href="#">Link</a>
       <a class="nav-link" href="#">Link</a>
-      <a class="nav-link disabled" href="#">Disabled</a>
+      <a class="nav-link" href="#">Link</a>
   </nav>
-
-<!-- test3 to see if i am pushing to same version -->
-<div>test3</div>
+  
+  <script src="assets/javascript/games.js"></script>
 
 </body>
 </html>
