@@ -8,4 +8,4 @@ $("button").on("click", function() {
         method: "GET"
     })
     
-}
+})
