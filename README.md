@@ -11,3 +11,12 @@ then we will do our ratings system
 https://www.gamerankings.com/
 https://www.gamespot.com/reviews/
 https://www.rockpapershotgun.com/2016/03/24/vulkan-api-hardware/
+
+
+Request URL
+https://api-endpoint.igdb.com
+App name
+none's App
+Key
+b22a38958f254adf3bafb79cc8be854e
+Add this as a user-key parameter to your API calls to authenticate.
