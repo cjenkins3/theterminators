@@ -35,4 +35,4 @@ $ curl "https://www.pricecharting.com/api/product?t=c0b53bce27c1bdab90b1605249e6
     }
 
 
-XboxAPI API Key	75a061747b8672aeac39874d863b283362c4cbdd
+XboxAPI API Key	4409be998dc26fe12aa661d850aed3072eb51226
