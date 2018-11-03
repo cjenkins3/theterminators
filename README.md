@@ -20,3 +20,21 @@ none's App
 Key
 b22a38958f254adf3bafb79cc8be854e
 Add this as a user-key parameter to your API calls to authenticate.
+
+
+https://www.pricecharting.com/api-documentation
+
+$ curl "https://www.pricecharting.com/api/product?t=c0b53bce27c1bdab90b1605249e600dc43dfd1d5&id=6910"
+
+    {
+        "status": "success",
+        "id":"6910",
+        "product-name":"EarthBound"
+        "console-name":"Super Nintendo",
+    }
+
+
+XboxAPI API Key	75a061747b8672aeac39874d863b283362c4cbdd
+
+
+
