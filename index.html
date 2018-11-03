@@ -87,6 +87,29 @@
 
   <!-- I want to display the ten results here UNDER the jumbotron -->
   <!-- I am just not sure how to do it -->
+<!-- gonna use some code from our NY times exercise -->
+
+<!-- Here we create an HTML Form for handling the inputs-->
+<form role="form">
+
+  <!-- Here we create the text box for capturing the search term-->
+  <div class="form-group">
+    <label for="search">Search Term:</label>
+    <input type="text" class="form-control" id="search-term">
+  </div>
+
+  <!-- Here we capture the number of records that the user wants to retrieve  -->
+  <div class="form-group">
+    <label for="pwd">Number of Records to Retrieve:</label>
+    <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
+      <option selected value="1">1</option>
+      <!-- Setting the option for 5 as default -->
+      <option value="5" selected>5</option>
+      <option value="10">10</option>
+    </select>
+  </div>
+</form>
+<!-- hey the search bar works :D -->
 
     <!-- <div class="displaycase">
 
