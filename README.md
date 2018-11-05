@@ -3,7 +3,8 @@
 okay so the highlighted portions are what we are going to shoot for
 and we will do it in stages
 so not all at once because that would be insane
-so list library and home buttons first
+home buttons first
+then list library
 then we will get to linking the games to their individual pages
 then we will link our game pages back to the home page (edited)
 then we will do our ratings system
@@ -20,3 +21,18 @@ none's App
 Key
 b22a38958f254adf3bafb79cc8be854e
 Add this as a user-key parameter to your API calls to authenticate.
+
+
+https://www.pricecharting.com/api-documentation
+
+$ curl "https://www.pricecharting.com/api/product?t=c0b53bce27c1bdab90b1605249e600dc43dfd1d5&id=6910"
+
+    {
+        "status": "success",
+        "id":"6910",
+        "product-name":"EarthBound"
+        "console-name":"Super Nintendo",
+    }
+
+
+XboxAPI API Key	4409be998dc26fe12aa661d850aed3072eb51226
