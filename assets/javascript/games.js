@@ -29,7 +29,6 @@ function buildQueryURL() {
 // Yummy aren't they  ;D   PROJECTONE\theterminators\assets\images\mmmQtips.gif
 // inside class joke for my TA
 
-
 $.ajax({
     url: "https://cors-anywhere.herokuapp.com/https://api-endpoint.igdb.com/genres/",
     headers: {
@@ -49,4 +48,10 @@ $.ajax({
 // gonna pull some more code from the NY times activity lesson
 // search terms input looks good
 
-
+// dropdown element
+// on click listener to make api calls
+// https://stackoverflow.com/questions/43671008/html-javascript-calling-a-function-with-drop-down-options
+// hardcode all genres on form
+// html forms grabbing genre picked
+// work backwards
+// existing app 
