@@ -1,4 +1,5 @@
 
+
 // first goal is to get the first ten listed results 
 // based on a category
 // top 10 most bought games on xbox this year
@@ -48,6 +49,7 @@ $.ajax({
 // gonna pull some more code from the NY times activity lesson
 // search terms input looks good
 
+
 // dropdown element
 // on click listener to make api calls
 // https://stackoverflow.com/questions/43671008/html-javascript-calling-a-function-with-drop-down-options
@@ -55,3 +57,19 @@ $.ajax({
 // html forms grabbing genre picked
 // work backwards
 // existing app 
+
+
+
+$("button").on("click", function() {
+    var games = $(this).attr("button-choice");
+
+    var queryURL =
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+    
+})
+
+// dc4003169689b712bf832dde037f1a228cd30496
