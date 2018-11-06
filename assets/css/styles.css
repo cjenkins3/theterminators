@@ -1,0 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.form-group {
+    width: 30%;
+    margin-left: 50px;
+    color: white;
+}
