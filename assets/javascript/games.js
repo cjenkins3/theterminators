@@ -9,7 +9,7 @@
 var game;
 var price;
 var genre;
-var poular;
+var popular;
 var agerest;
 
 function buildQueryURL() {
@@ -26,7 +26,7 @@ function buildQueryURL() {
   console.log(queryURL + $.param(queryParams));
   return queryURL + $.param(queryParams);
 
-
+}
 
 // I want this to create a list of 10 games
 // Yummy aren't they  ;D   PROJECTONE\theterminators\assets\images\mmmQtips.gif
@@ -49,8 +49,7 @@ function buildQueryURL() {
 // give a filter with a game name
 
 
-function getSelectedValue()
-{
+function getSelectedValue() {
     var selectedValue = document.getElementById("list").value;
     console.log(selectedValue)
     return selectedValue;
