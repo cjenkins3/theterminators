@@ -12,17 +12,17 @@ var poular;
 var agerest;
 
 function buildQueryURL() {
-    // queryURL is the url we'll use to query the API
+//     // queryURL is the url we'll use to query the API
     var queryURL = "https://www.giantbomb.com";
   
-    // Begin building an object to contain our API call's query parameters
-    // Set the API key
+//     // Begin building an object to contain our API call's query parameters
+//     // Set the API key
     var queryParams = { "api-key": "020f014925d48c42945182a55ffb88c3935919d5 " };
 
-    // Logging the URL so we have access to it for troubleshooting
-//   console.log("---------------\nURL: " + queryURL + "\n---------------");
-//   console.log(queryURL + $.param(queryParams));
-//   return queryURL + $.param(queryParams);
+//     // Logging the URL so we have access to it for troubleshooting
+  console.log("---------------\nURL: " + queryURL + "\n---------------");
+  console.log(queryURL + $.param(queryParams));
+  return queryURL + $.param(queryParams);
 
 }
 
@@ -30,17 +30,7 @@ function buildQueryURL() {
 // Yummy aren't they  ;D   PROJECTONE\theterminators\assets\images\mmmQtips.gif
 // inside class joke for my TA
 
-$.ajax({
-    url: "https://cors-anywhere.herokuapp.com/https://api-endpoint.igdb.com/genres/",
-    headers: {
-        "user-key": "b22a38958f254adf3bafb79cc8be854e",
-        Accept: "application/json"
-    }
-}).then(function(resp) {
-    console.log(resp);
-}).catch(function(err) {
-    console.log(err);
-})
+
 
 
 // well it is displaying, just not on the page
@@ -52,6 +42,11 @@ $.ajax({
 
 // here is what q says I do
 // dropdown element
+
+// specify return type is json because def is XML
+// give a filter with a game name
+
+
 function getSelectedValue()
 {
     var selectedValue = document.getElementById("list").value;
@@ -68,8 +63,8 @@ function getSelectedValue()
 
 // build our app around our api
 
-
-
+var genreID = getSelectedValue();
+var games = $(this).attr("data-games");
 var buttons = ["Popular", "Price", "Age Restriction", "Genre"];
 
 
@@ -77,19 +72,14 @@ $("button").on("click", function() {
 
 
     var queryURL = "https://www.giantbomb.com";
-    var genreID = getSelectedValue();
-//     var games = $(this).attr("data-games");
-//     var queryURL = "https://api-endpoint.igdb.com" + games;
-
+    
     $.ajax({
         url: queryURL,
-        method: "GET"
+        method: "GET",
+        dataType: "jsonp"
     }).then(function(response) {
 
         var results = response.data;
     
 })
 });
-
-
-// dc4003169689b712bf832dde037f1a228cd30496
