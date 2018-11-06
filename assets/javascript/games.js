@@ -68,18 +68,32 @@ var games = $(this).attr("data-games");
 var buttons = ["Popular", "Price", "Age Restriction", "Genre"];
 
 
-$("button").on("click", function() {
 
 
-    var queryURL = "https://www.giantbomb.com";
+
+//     var queryURL = "https://www.giantbomb.com";
     
-    $.ajax({
-        url: queryURL,
-        method: "GET",
+//     $.ajax({
+//         url: queryURL,
+//         method: "GET",
+//         dataType: "jsonp"
+//     }).then(function(response) {
+
+//         var results = response.data;
+    
+// })
+
+$(document).ready(function(){
+    $("button").on("click", function() {
+        $.ajax({
+        url: "http://api.giantbomb.com/search/",
+        type: "get",
+        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", query: "crash bandicoot", field_list : "name, image", format : "jsonp", json_callback : "gamer" },
         dataType: "jsonp"
-    }).then(function(response) {
-
-        var results = response.data;
-    
-})
+        });
+    });
 });
+
+function gamer(data) {
+console.log(data);
+}
