@@ -42,6 +42,7 @@ $.ajax({
     console.log(err);
 })
 
+
 // well it is displaying, just not on the page
 // its in the console
 
@@ -64,20 +65,31 @@ function getSelectedValue()
 // html forms grabbing genre picked
 // work backwards
 // existing app 
+
 // build our app around our api
 
 
+
+var buttons = ["Popular", "Price", "Age Restriction", "Genre"];
+
+
 $("button").on("click", function() {
-    var games = $(this).attr("button-choice");
+
 
     var queryURL = "https://www.giantbomb.com";
     var genreID = getSelectedValue();
+//     var games = $(this).attr("data-games");
+//     var queryURL = "https://api-endpoint.igdb.com" + games;
+
     $.ajax({
         url: queryURL,
         method: "GET"
+    }).then(function(response) {
 
-    })
+        var results = response.data;
     
 })
+});
+
 
 // dc4003169689b712bf832dde037f1a228cd30496
