@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <title>Assimilate or Terminiate</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -16,6 +15,7 @@
 
 </head>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <style>
     @import url('https://fonts.googleapis.com/css?family=Orbitron');
@@ -42,6 +42,11 @@
         background-image: url(https://www.picclickimg.com/d/w1600/pict/272591177988_/SPACE-GUARDIANS-OF-THE-GALAXY-Background-Backdrop-for.jpg);
         background-repeat: no-repeat;
         background-size: cover;
+      }
+      #games-info {
+        color: white;
+        text-align: center;
+        font-style: Orbitron;
       }
         
   </style>
@@ -78,17 +83,13 @@
         <img src="assets/images/skynet.png" alt="skynet logo" style="width: 300px; height: 200px; float: right;">
       </div>  
 
-      <select id = "list" onchange="getSelectValue();">
-            <option value="js">javascript</option>
-            <option value="will">will</option>
-            <option value="kill">kill</option>
-            <option value="me">me</option>
-            <option value="slowly">slowly</option>
-      </select>
   
   <!-- I want to display the ten results here UNDER the jumbotron -->
   <!-- I am just not sure how to do it -->
 <!-- gonna use some code from our NY times exercise -->
+
+
+
 
 <!-- Here we create an HTML Form for handling the inputs-->
 <form role="form">
@@ -111,17 +112,13 @@
   </div>
 </form>
 
+<!--games info dumps here-->
+<div id="games-info">
+</div>
 
-  <nav class="nav flex-column" style="margin-left: 10.5em;">
-    
-    <hr>
-    <br>
-    <a class="nav-link active" href="#">Active</a>
-      <a class="nav-link" href="#">Link</a>
-      <a class="nav-link" href="#">Link</a>
-      <a class="nav-link" href="#">Link</a>
-  </nav>
-
+<div id="image-display">
+</div>
+  
 
 <!-- hey the search bar works :D -->
 
@@ -129,11 +126,6 @@
 
     </div> -->
 
-<!-- display case -->
-  <div class="container">
-      <div id="games-info">
-      </div>
-  </div>
   <script src="assets/javascript/games.js"></script>
 
 </body>

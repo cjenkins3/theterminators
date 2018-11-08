@@ -97,36 +97,41 @@
 
 $(document).ready(function(){
     $("button").on("click", function() {
- 
+
+        
         $.ajax({
         url: "http://api.giantbomb.com/search/",
         type: "get",
-        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", query: "crash bandicoot", resources : "game" , format : "jsonp", json_callback : "gamer" },
+        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", query: "crash bandicoot", resources : "game" ,  format : "jsonp", json_callback : "gamer" },
         dataType: "jsonp"
         });
     });
- });
- 
- function gamer(data) {
+});
+// now we need to figure out how to append the data to the page
+// loop through data.result/ array
+// filter if it is a resource-type = game
+// if it is then display
+// if not skip
+
+function gamer(data) {
+
     var toAppend = "";
     $.each(data.results, function(i,o) {
         console.log(o.name);
         console.log(o.resource_type);
         toAppend += "<option>" + o.name + " " + o.resource_type + "</option>";
-        console.log(o.image.original_url);
+
     var image = $("<img>",
     { id: "Myid",
         src: o.image.original_url,
         width: 300
  }).appendTo($("#image-display"));
     });
- 
-    $("#games-info").append(toAppend);
- console.log(data);
- }
 
-// now we need to figur out how to append the data to the page
-// loop through data.result/ array
-// filter if it is a resource-type = game
-// if it is then display
-// if not skip
+
+    
+    $("#games-info").append(toAppend);
+console.log(data);
+}
+
+
