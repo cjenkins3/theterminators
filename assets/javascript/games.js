@@ -6,27 +6,27 @@
 
 // some variables
 
-var game;
-var price;
-var genre;
-var popular;
-var agerest;
+// var game;
+// var price;
+// var genre;
+// var popular;
+// var agerest;
 
-function buildQueryURL() {
-//     // queryURL is the url we'll use to query the API
-    var queryURL = "https://www.giantbomb.com";
+// function buildQueryURL() {
+// //     // queryURL is the url we'll use to query the API
+//     var queryURL = "https://www.giantbomb.com";
   
-//     // Begin building an object to contain our API call's query parameters
-//     // Set the API key
-    var queryParams = { "api-key": "020f014925d48c42945182a55ffb88c3935919d5 " };
+// //     // Begin building an object to contain our API call's query parameters
+// //     // Set the API key
+//     var queryParams = { "api-key": "020f014925d48c42945182a55ffb88c3935919d5 " };
 
 
-//     // Logging the URL so we have access to it for troubleshooting
-  console.log("---------------\nURL: " + queryURL + "\n---------------");
-  console.log(queryURL + $.param(queryParams));
-  return queryURL + $.param(queryParams);
+// //     // Logging the URL so we have access to it for troubleshooting
+//   console.log("---------------\nURL: " + queryURL + "\n---------------");
+//   console.log(queryURL + $.param(queryParams));
+//   return queryURL + $.param(queryParams);
 
-}
+// }
 
 // I want this to create a list of 10 games
 // Yummy aren't they  ;D   PROJECTONE\theterminators\assets\images\mmmQtips.gif
@@ -49,11 +49,11 @@ function buildQueryURL() {
 // give a filter with a game name
 
 
-function getSelectedValue() {
-    var selectedValue = document.getElementById("list").value;
-    console.log(selectedValue)
-    return selectedValue;
-}
+// function getSelectedValue() {
+//     var selectedValue = document.getElementById("list").value;
+//     console.log(selectedValue)
+//     return selectedValue;
+// }
 // on click listener to make api calls
 
 
@@ -65,16 +65,16 @@ function getSelectedValue() {
 
 // build our app around our api
 
-var genreID = getSelectedValue();
-var games = $(this).attr("data-games");
-var buttons = ["Popular", "Price", "Age Restriction", "Genre"];
+// var genreID = getSelectedValue();
+// var games = $(this).attr("data-games");
+// var buttons = ["Popular", "Price", "Age Restriction", "Genre"];
 
 
 
 
 
-    var games = $(this).attr("data-games");
-    var queryURL = "https://www.giantbomb.com/api/genres/?api_key=020f014925d48c42945182a55ffb88c3935919d5";
+//     var games = $(this).attr("data-games");
+//     var queryURL = "https://www.giantbomb.com/api/genres/?api_key=020f014925d48c42945182a55ffb88c3935919d5";
     // var genreID = getSelectedValue();
 
 
@@ -93,16 +93,31 @@ var buttons = ["Popular", "Price", "Age Restriction", "Genre"];
 
 $(document).ready(function(){
     $("button").on("click", function() {
+        
         $.ajax({
         url: "http://api.giantbomb.com/search/",
         type: "get",
-        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", query: "crash bandicoot", field_list : "name, image", format : "jsonp", json_callback : "gamer" },
+        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", query: "crash bandicoot", resources : "game" ,  format : "jsonp", json_callback : "gamer" },
         dataType: "jsonp"
         });
     });
 });
 
 function gamer(data) {
+    var toAppend = "";
+    $.each(data.results, function(i,o) {
+        console.log(o.name);
+        console.log(o.resource_type);
+        toAppend += "<option>" + o.name + " " + o.resource_type + "</option>";
+        console.log(data.results);
+    var image = $("<img>",
+    { id: "Myid",
+        src: o.image.original_url,
+        width: 300
+ }).appendTo($("#image-display"));
+    });
+    
+    $("#games-info").append(toAppend);
 console.log(data);
 }
 
