@@ -108,7 +108,7 @@ function gamer(data) {
     $.each(data.results, function(i,o) {
         console.log(o.name);
         console.log(o.resource_type);
-        toAppend += "<option>" + o.name + " " + o.resource_type + "</option>";
+        toAppend += "<option>" + o.name + "</option>";
         console.log(data.results);
     var image = $("<img>",
     { id: "Myid",
@@ -120,4 +120,6 @@ function gamer(data) {
     $("#games-info").append(toAppend);
 console.log(data);
 }
+
+
 

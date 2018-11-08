@@ -43,11 +43,6 @@
         background-repeat: no-repeat;
         background-size: cover;
       }
-      #games-info {
-        color: white;
-        text-align: center;
-        font-style: Orbitron;
-      }
         
   </style>
         <!--top nav bar-->
@@ -96,7 +91,7 @@
   <!-- Here we create the text box for capturing the search term-->
   <div class="form-group">
     <label for="search">Search Term:</label>
-    <input type="text" class="form-control" id="search-term">
+    <input type="text" class="form-control" placeholder="" value="Search" id="search-term">
   </div>
 
   <!-- Here we capture the number of records that the user wants to retrieve  -->
@@ -111,13 +106,22 @@
   </div>
 </form>
 
-<!--games info dumps here-->
-<div id="games-info">
-</div>
+<!--div just to create spacing-->
+<div class="space"></div>
 
-<div id="image-display">
+<!--games info dumps here-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div id="games-info">
+      </div>
+    </div>
+      <div class="col-md-6">
+        <div id="image-display">
+        </div> 
+      </div>
+  </div>
 </div>
-  
 
 <!-- hey the search bar works :D -->
 
