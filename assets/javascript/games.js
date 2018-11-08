@@ -87,12 +87,17 @@
 //     }).then(function(response) {
 
 //         var results = response.data;
-    
-
 // })
+
+
+// function gamer(data) {
+//     console.log(data);
+//     $('#games-info').html("Test");
+// }
 
 $(document).ready(function(){
     $("button").on("click", function() {
+
         
         $.ajax({
         url: "http://api.giantbomb.com/search/",
@@ -102,22 +107,31 @@ $(document).ready(function(){
         });
     });
 });
+// now we need to figure out how to append the data to the page
+// loop through data.result/ array
+// filter if it is a resource-type = game
+// if it is then display
+// if not skip
 
 function gamer(data) {
+
     var toAppend = "";
     $.each(data.results, function(i,o) {
         console.log(o.name);
         console.log(o.resource_type);
         toAppend += "<option>" + o.name + " " + o.resource_type + "</option>";
-        console.log(data.results);
+
     var image = $("<img>",
     { id: "Myid",
         src: o.image.original_url,
         width: 300
  }).appendTo($("#image-display"));
     });
+
+
     
     $("#games-info").append(toAppend);
 console.log(data);
 }
+
 
