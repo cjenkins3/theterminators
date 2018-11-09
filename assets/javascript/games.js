@@ -89,3 +89,5 @@ function gamer(data) {
     $("#games-info").append(toAppend);
 console.log(data);
 }
+
+//something to test
