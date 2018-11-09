@@ -49,7 +49,7 @@
 // 
 $(document).ready(function(){
     $("button").on("click", function() {
-        
+        event.preventDefault();
         $.ajax({
         url: "http://api.giantbomb.com/api/games/?",
         type: "get",
@@ -61,6 +61,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#genre-button").on("click", function() {
+        event.preventDefault();
         
         $.ajax({
         url: "http://api.giantbomb.com/api/genres/?",
@@ -73,11 +74,25 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#age-button").on("click", function() {
-        
+        event.preventDefault();
+
         $.ajax({
         url: "http://api.giantbomb.com/api/game_ratings/?",
         type: "get",
         data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "5", resources : "game" , format : "jsonp", json_callback : "age" },
+        dataType: "jsonp"
+        });
+    });
+});
+
+$(document).ready(function(){
+    $("#popular-button").on("click", function() {
+        event.preventDefault();
+        
+        $.ajax({
+        url: "http://api.giantbomb.com/api/reviews/?",
+        type: "get",
+        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "5", resources : "game" , format : "jsonp", json_callback : "reviews" },
         dataType: "jsonp"
         });
     });
@@ -98,10 +113,10 @@ function gamer(data) {
     });
     
     $("#games-info").append(toAppend);
-console.log(data);
 }
 
 function genre(data) {
+    
     var toGenreAppend = "";
     $.each(data.results, function(i,o) {
         // console.log(o.name);
@@ -112,7 +127,6 @@ function genre(data) {
     });
     
     $("#genre-info").append(toGenreAppend);
-console.log(data);
 }
 
 function age(data) {
@@ -126,5 +140,18 @@ function age(data) {
     });
     
     $("#age-info").append(toAgeAppend);
+}
+
+function reviews(data) {
+    var toPopularAppend = "";
+    $.each(data.results, function(i,o) {
+        // console.log(o.name);
+        // console.log(o.resource_type);
+        toPopularAppend += "<option>" + o.score + " " + "<h1>Stars</h1> " + "</option>";
+        // console.log(data.results);
+    
+    });
+    
+    $("#popular-info").append(toPopularAppend);
 console.log(data);
 }

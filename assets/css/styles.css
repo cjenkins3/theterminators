@@ -20,6 +20,8 @@ form {
     vertical-align: top;
     float: left;
     margin-right: 3em;
+    padding-right: 2px;
+    line-height: 14.5;
 }
 #age-info {
     color: white;
@@ -29,6 +31,7 @@ form {
     vertical-align: top;
     float: left;
     margin-right: 3em;
+    line-height: 14.5;
 }
 #genre-info {
     color: white;
@@ -38,6 +41,18 @@ form {
     vertical-align: top;
     float: right;
     margin-left: 3em;
+    margin-right: -5em;
+    line-height: 14.5;
+}
+#popular-info {
+        color: white;
+        text-align: center;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 16pt;
+        vertical-align: top;
+        float: left;
+        margin-left: -9em;
+        line-height: 14.5;
 }
 #image-display {
     margin-left: 40px;
