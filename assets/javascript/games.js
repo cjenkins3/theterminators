@@ -6,33 +6,13 @@
 
 // some variables
 
-// var game;
-// var price;
-// var genre;
-// var popular;
-// var agerest;
-
-// function buildQueryURL() {
-// //     // queryURL is the url we'll use to query the API
-//     var queryURL = "https://www.giantbomb.com";
-  
-// //     // Begin building an object to contain our API call's query parameters
-// //     // Set the API key
-//     var queryParams = { "api-key": "020f014925d48c42945182a55ffb88c3935919d5 " };
-
-
-// //     // Logging the URL so we have access to it for troubleshooting
-//   console.log("---------------\nURL: " + queryURL + "\n---------------");
-//   console.log(queryURL + $.param(queryParams));
-//   return queryURL + $.param(queryParams);
-
-// }
+    var baseURL = 'http://giantbomb.com/api';
+    var apiKey = '020f014925d48c42945182a55ffb88c3935919d5';
+    var format = 'json';
 
 // I want this to create a list of 10 games
 // Yummy aren't they  ;D   PROJECTONE\theterminators\assets\images\mmmQtips.gif
 // inside class joke for my TA
-
-
 
 // well it is displaying, just not on the page
 // its in the console
@@ -48,12 +28,6 @@
 // specify return type is json because def is XML
 // give a filter with a game name
 
-
-// function getSelectedValue() {
-//     var selectedValue = document.getElementById("list").value;
-//     console.log(selectedValue)
-//     return selectedValue;
-// }
 // on click listener to make api calls
 
 
@@ -65,72 +39,51 @@
 
 // build our app around our api
 
-// var genreID = getSelectedValue();
-// var games = $(this).attr("data-games");
-// var buttons = ["Popular", "Price", "Age Restriction", "Genre"];
-
-
-
-
-
-//     var games = $(this).attr("data-games");
-//     var queryURL = "https://www.giantbomb.com/api/genres/?api_key=020f014925d48c42945182a55ffb88c3935919d5";
-    // var genreID = getSelectedValue();
-
-
-
-    
-//     $.ajax({
-//         url: queryURL,
-//         method: "GET",
-//         dataType: "jsonp"
-//     }).then(function(response) {
-
-//         var results = response.data;
-// })
-
-
-// function gamer(data) {
-//     console.log(data);
-//     $('#games-info').html("Test");
-// }
-
-$(document).ready(function(){
-    $("button").on("click", function() {
-
-        
-        $.ajax({
-        url: "http://api.giantbomb.com/search/",
-        type: "get",
-        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", query: "crash bandicoot", resources : "game" ,  format : "jsonp", json_callback : "gamer" },
-        dataType: "jsonp"
-        });
-    });
-});
 // now we need to figure out how to append the data to the page
 // loop through data.result/ array
 // filter if it is a resource-type = game
 // if it is then display
 // if not skip
+// 
+// now we need to get our query to change from crash bandicoot
+// 
+$(document).ready(function(){
+    $("button").on("click", function() {
+        
+        $.ajax({
+        url: "http://api.giantbomb.com/api/games/?",
+        type: "get",
+        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "5", resources : "game" , format : "jsonp", json_callback : "gamer" },
+        dataType: "jsonp"
+        });
+    });
+});
+
+$(document).ready(function(){
+    $("button").on("click", function() {
+        
+        $.ajax({
+        url: "http://api.giantbomb.com/api/genres/?",
+        type: "get",
+        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "5", resources : "game" , format : "jsonp", json_callback : "gamer" },
+        dataType: "jsonp"
+        });
+    });
+});
 
 function gamer(data) {
-
     var toAppend = "";
     $.each(data.results, function(i,o) {
         console.log(o.name);
         console.log(o.resource_type);
-
         toAppend += "<option>" + o.name + "</option>";
         console.log(data.results);
-
     var image = $("<img>",
     { id: "Myid",
         src: o.image.original_url,
         width: 300
  }).appendTo($("#image-display"));
     });
-
-
     
     $("#games-info").append(toAppend);
 console.log(data);
