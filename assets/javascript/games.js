@@ -66,6 +66,7 @@ $(document).ready(function(){
         url: "http://api.giantbomb.com/api/genres/?",
         type: "get",
         data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "5", resources : "game" , format : "jsonp", json_callback : "gamer" },
+
         dataType: "jsonp"
         });
     });
