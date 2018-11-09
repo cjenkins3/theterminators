@@ -60,13 +60,24 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    $("button").on("click", function() {
+    $("#genre-button").on("click", function() {
         
         $.ajax({
         url: "http://api.giantbomb.com/api/genres/?",
         type: "get",
-        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "5", resources : "game" , format : "jsonp", json_callback : "gamer" },
+        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "5", resources : "game" , format : "jsonp", json_callback : "genre" },
+        dataType: "jsonp"
+        });
+    });
+});
 
+$(document).ready(function(){
+    $("#age-button").on("click", function() {
+        
+        $.ajax({
+        url: "http://api.giantbomb.com/api/game_ratings/?",
+        type: "get",
+        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "5", resources : "game" , format : "jsonp", json_callback : "age" },
         dataType: "jsonp"
         });
     });
@@ -75,10 +86,10 @@ $(document).ready(function(){
 function gamer(data) {
     var toAppend = "";
     $.each(data.results, function(i,o) {
-        console.log(o.name);
-        console.log(o.resource_type);
+        // console.log(o.name);
+        // console.log(o.resource_type);
         toAppend += "<option>" + o.name + "</option>";
-        console.log(data.results);
+        // console.log(data.results);
     var image = $("<img>",
     { id: "Myid",
         src: o.image.original_url,
@@ -87,5 +98,33 @@ function gamer(data) {
     });
     
     $("#games-info").append(toAppend);
+console.log(data);
+}
+
+function genre(data) {
+    var toGenreAppend = "";
+    $.each(data.results, function(i,o) {
+        // console.log(o.name);
+        // console.log(o.resource_type);
+        toGenreAppend += "<option>" + o.name + "</option>";
+        // console.log(data.results);
+    
+    });
+    
+    $("#genre-info").append(toGenreAppend);
+console.log(data);
+}
+
+function age(data) {
+    var toAgeAppend = "";
+    $.each(data.results, function(i,o) {
+        // console.log(o.name);
+        // console.log(o.resource_type);
+        toAgeAppend += "<option>" + o.name + "</option>";
+        // console.log(data.results);
+    
+    });
+    
+    $("#age-info").append(toAgeAppend);
 console.log(data);
 }

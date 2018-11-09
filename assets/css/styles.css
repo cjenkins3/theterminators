@@ -21,6 +21,24 @@ form {
     float: left;
     margin-right: 3em;
 }
+#age-info {
+    color: white;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16pt;
+    vertical-align: top;
+    float: left;
+    margin-right: 3em;
+}
+#genre-info {
+    color: white;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16pt;
+    vertical-align: top;
+    float: right;
+    margin-left: 3em;
+}
 #image-display {
     margin-left: 40px;
     vertical-align: top;
