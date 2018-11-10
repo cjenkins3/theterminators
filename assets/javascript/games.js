@@ -100,6 +100,10 @@ $(document).ready(function(){
 
 function gamer(data) {
     var toAppend = "";
+    $("#popular-info").empty();
+    $("#age-info").empty();
+    $("#genre-info").empty();
+    $("#image-display").empty();
     $.each(data.results, function(i,o) {
         // console.log(o.name);
         // console.log(o.resource_type);
@@ -118,6 +122,10 @@ function gamer(data) {
 function genre(data) {
     
     var toGenreAppend = "";
+    $("#popular-info").empty();
+    $("#age-info").empty();
+    $("#genre-info").empty();
+    $("#image-display").empty();
     $.each(data.results, function(i,o) {
         // console.log(o.name);
         // console.log(o.resource_type);
@@ -131,6 +139,10 @@ function genre(data) {
 
 function age(data) {
     var toAgeAppend = "";
+    $("#popular-info").empty();
+    $("#age-info").empty();
+    $("#genre-info").empty();
+    $("#image-display").empty();
     $.each(data.results, function(i,o) {
         // console.log(o.name);
         // console.log(o.resource_type);
@@ -144,6 +156,10 @@ function age(data) {
 
 function reviews(data) {
     var toPopularAppend = "";
+    $("#popular-info").empty();
+    $("#age-info").empty();
+    $("#genre-info").empty();
+    $("#image-display").empty();
     $.each(data.results, function(i,o) {
         // console.log(o.name);
         // console.log(o.resource_type);
@@ -156,4 +172,46 @@ function reviews(data) {
 console.log(data);
 }
 
+function clear(){
+    $("#genre").empty()
+}
 //something to test
+
+// function buildQueryURL() {
+//     var queryURL = "https://www.giantbomb.com/api/search/?"
+
+//     var queryParams = { "api-key": "020f014925d48c42945182a55ffb88c3935919d5" };
+
+//     queryParams.q = $("#search-term")
+//     .val()
+//     .trim();
+    
+// }
+
+// $(document).ready(function(){
+//     $("button").on("click", function() {
+//     $.ajax({
+//       url: "http://api.giantbomb.com/search/",
+//       type: "get",
+//       data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", query: "Assassins Creed", format : "jsonp", json_callback : "gamer" },
+//       dataType: "jsonp"
+//         });
+//     });
+// });
+
+// function gamer(data) {
+//     var toAppend = "";
+//     $.each(data.results, function(i,o) {
+//         // console.log(o.name);
+//         // console.log(o.resource_type);
+//         toAppend += "<option>" + o.name + "</option>";
+//         // console.log(data.results);
+//     var image = $("<img>",
+//     { id: "Myid",
+//         src: o.image.original_url,
+//         width: 300
+//  }).appendTo($("#image-display"));
+//     });
+    
+//     $("#games-info").append(toAppend);
+// }
