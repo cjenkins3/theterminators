@@ -53,7 +53,7 @@ $(document).ready(function(){
         $.ajax({
         url: "http://api.giantbomb.com/api/games/?",
         type: "get",
-        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "5", resources : "game" , format : "jsonp", json_callback : "gamer" },
+        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "15", resources : "game" , format : "jsonp", json_callback : "gamer" },
         dataType: "jsonp"
         });
     });
@@ -66,7 +66,7 @@ $(document).ready(function(){
         $.ajax({
         url: "http://api.giantbomb.com/api/genres/?",
         type: "get",
-        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "5", resources : "game" , format : "jsonp", json_callback : "genre" },
+        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "15", resources : "game" , format : "jsonp", json_callback : "genre" },
         dataType: "jsonp"
         });
     });
@@ -79,7 +79,7 @@ $(document).ready(function(){
         $.ajax({
         url: "http://api.giantbomb.com/api/game_ratings/?",
         type: "get",
-        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "5", resources : "game" , format : "jsonp", json_callback : "age" },
+        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "15", resources : "game" , format : "jsonp", json_callback : "age" },
         dataType: "jsonp"
         });
     });
@@ -92,7 +92,7 @@ $(document).ready(function(){
         $.ajax({
         url: "http://api.giantbomb.com/api/reviews/?",
         type: "get",
-        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "5", resources : "game" , format : "jsonp", json_callback : "reviews" },
+        data: {api_key : "020f014925d48c42945182a55ffb88c3935919d5", limit: "15", resources : "game" , format : "jsonp", json_callback : "reviews" },
         dataType: "jsonp"
         });
     });
@@ -100,10 +100,10 @@ $(document).ready(function(){
 
 function gamer(data) {
     var toAppend = "";
-    $("#popular-info").empty();
-    $("#age-info").empty();
+    // $("#popular-info").empty();
+    // $("#age-info").empty();
     // $("#genre-info").empty();
-    $("#image-display").empty();
+    // $("#image-display").empty();
     $.each(data.results, function(i,o) {
         // console.log(o.name);
         // console.log(o.resource_type);
@@ -125,7 +125,7 @@ function genre(data) {
     $("#popular-info").empty();
     $("#age-info").empty();
     // $("#genre-info").empty();
-    $("#image-display").empty();
+    // $("#image-display").empty();
     $.each(data.results, function(i,o) {
         // console.log(o.name);
         // console.log(o.resource_type);
@@ -140,9 +140,9 @@ function genre(data) {
 function age(data) {
     var toAgeAppend = "";
     $("#popular-info").empty();
-    $("#age-info").empty();
+    // $("#age-info").empty();
     $("#genre-info").empty();
-    $("#image-display").empty();
+    // $("#image-display").empty();
     $.each(data.results, function(i,o) {
         // console.log(o.name);
         // console.log(o.resource_type);
@@ -156,10 +156,10 @@ function age(data) {
 
 function reviews(data) {
     var toPopularAppend = "";
-    $("#popular-info").empty();
+    // $("#popular-info").empty();
     $("#age-info").empty();
     $("#genre-info").empty();
-    $("#image-display").empty();
+    // $("#image-display").empty();
     $.each(data.results, function(i,o) {
         // console.log(o.name);
         // console.log(o.resource_type);
@@ -172,9 +172,9 @@ function reviews(data) {
 console.log(data);
 }
 
-function clear(){
-    $("#genre").empty()
-}
+// function clear(){
+//     $("#genre").empty()
+// }
 //something to test
 
 // function buildQueryURL() {
