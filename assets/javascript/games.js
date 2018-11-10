@@ -102,7 +102,7 @@ function gamer(data) {
     var toAppend = "";
     $("#popular-info").empty();
     $("#age-info").empty();
-    $("#genre-info").empty();
+    // $("#genre-info").empty();
     $("#image-display").empty();
     $.each(data.results, function(i,o) {
         // console.log(o.name);
@@ -124,7 +124,7 @@ function genre(data) {
     var toGenreAppend = "";
     $("#popular-info").empty();
     $("#age-info").empty();
-    $("#genre-info").empty();
+    // $("#genre-info").empty();
     $("#image-display").empty();
     $.each(data.results, function(i,o) {
         // console.log(o.name);
