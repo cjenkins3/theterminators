@@ -30,7 +30,7 @@ form {
     font-family: 'Orbitron', sans-serif;
     font-size: 16pt;
     vertical-align: top;
-    float: left;
+    float: right;
     margin-right: 3em;
     line-height: 14.5;
 }
@@ -40,7 +40,7 @@ form {
     font-family: 'Orbitron', sans-serif;
     font-size: 16pt;
     vertical-align: top;
-    float: right;
+    float: left;
     margin-left: 3em;
     margin-right: -5em;
     line-height: 14.5;
